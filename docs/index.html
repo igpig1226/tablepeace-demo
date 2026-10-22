@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f6f8f7">
+  <meta name="theme-color" content="#f5faff">
   <meta name="description" content="TablePeace：约束感知的小组决策工作台。收集私人需求、定位方案冲突、模拟方案调整、明确成员确认。">
   <title>TablePeace｜让不同需求，走向一个可行方案</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
@@ -11,9 +11,10 @@
   <link rel="stylesheet" href="./site.css">
   <link rel="stylesheet" href="./apple.css">
   <link rel="stylesheet" href="./vision.css">
+  <link rel="stylesheet" href="./ocean.css">
 </head>
 <body>
-  <header class="topbar"><div class="topbar-inner"><a class="logo" href="#top"><span class="logo-mark">⌗</span>TablePeace</a><nav class="topnav"><a class="hide-mobile" href="#mechanism">工作原理</a><a class="hide-mobile" href="#vision">未来能力</a><a class="hide-mobile" href="#boundaries">产品边界</a><a class="button-outline button-sm" href="#demo">交互演示</a></nav></div></header>
+  <header class="topbar"><div class="topbar-inner"><a class="logo" href="#top"><span class="logo-mark">⌗</span>TablePeace</a><nav class="topnav"><a class="hide-mobile" href="#mechanism">工作原理</a><a class="hide-mobile" href="#vision">功能中心</a><a class="hide-mobile" href="#boundaries">产品边界</a><a class="button-outline button-sm" href="#demo">交互演示</a></nav></div></header>
   <main id="top">
     <section class="hero cn-hero"><div><div class="eyebrow">约束感知 · 小组决策工作台</div><h1>让每个人的底线，<br>都有位置。</h1><p>把散落在群聊里的时间、预算与环境要求，变成清晰可比较的方案。发现冲突，模拟调整，再由每个人亲自确认。</p><div class="button-row"><a class="button" href="#demo">体验交互演示 <span aria-hidden="true">↗</span></a><a class="button-outline" href="#mechanism">了解工作原理</a></div><div class="tiny muted" style="margin-top:18px">无需注册 · 私人条件不对外展示 · 最终决定由人作出</div></div><div class="hero-preview" aria-label="四人方案对比示意"><div class="preview-head"><div><div class="eyebrow">方案兼容性总览</div><b>周五项目聚会</b></div><span class="demo-tag">虚构示例</span></div><div class="preview-row"><div></div><div class="preview-cell">咖啡馆</div><div class="preview-cell">学校图书馆</div><div class="preview-cell">创客空间</div></div><div class="preview-row"><div class="preview-cell preview-label">时间</div><div class="preview-cell bad">1 人冲突</div><div class="preview-cell bad">1 人冲突</div><div class="preview-cell good">无冲突</div></div><div class="preview-row"><div class="preview-cell preview-label">预算</div><div class="preview-cell bad">2 人冲突</div><div class="preview-cell good">无冲突</div><div class="preview-cell good">无冲突</div></div><div class="preview-row"><div class="preview-cell preview-label">环境</div><div class="preview-cell bad">2 人冲突</div><div class="preview-cell good">无冲突</div><div class="preview-cell bad">2 人冲突</div></div><div class="preview-foot">◇ 方案重组：学校图书馆 + 18:00 → 0 个已记录冲突</div></div></section>
     <section class="feature-band" id="mechanism"><div class="feature-grid"><article class="feature"><div class="feature-icon">01</div><h3>私下收集真实边界</h3><p>成员分别提交可参加时段、预算上限、安静环境需求。具体数值只属于本人。</p></article><article class="feature"><div class="feature-icon">02</div><h3>确定性检查冲突</h3><p>规则引擎逐项核对硬性条件。展示匿名冲突人数，不把“未回复”算作同意。</p></article><article class="feature"><div class="feature-icon">03</div><h3>重组方案，明确确认</h3><p>组合已有地点和时间，模拟可行性。组织者核实场地，所有成员再确认同一方案。</p></article></div></section>
@@ -21,19 +22,19 @@
     <section class="vision-section" id="vision" aria-labelledby="vision-title">
       <div class="vision-container">
         <div class="vision-head">
-          <div><div class="eyebrow">TABLEPEACE / NEXT</div><h2 id="vision-title">让决策从“可行”，<br>走向“可解释、可推进”。</h2><p>把需求整理、情景推演、共识确认和隐私保护放进同一个决策流程。以下为使用虚构资料的未来产品概念展示。</p></div>
-          <span class="vision-proof">概念交互 · 尚未接入真实 AI 或外部服务</span>
+          <div><div class="eyebrow">TABLEPEACE / STUDIO</div><h2 id="vision-title">把复杂决策，<br>变成清晰行动。</h2><p>从需求收集到方案推演，再到确认、提醒与复盘。进入功能中心，探索一套完整的小组决策体验。</p></div>
+          <span class="vision-proof">交互 Demo · 虚构样例数据</span>
         </div>
         <div class="vision-console">
-          <div class="vision-menu" role="tablist" aria-label="未来能力预览">
+          <div class="vision-menu" role="tablist" aria-label="功能中心">
             <button class="vision-tab active" id="vision-tab-ai" role="tab" aria-controls="vision-ai" aria-selected="true" data-vision="ai"><span class="vision-tab-no">01</span><span><b>AI 需求草稿</b><small>从自然语言到本人确认</small></span><span class="vision-tab-arrow" aria-hidden="true">↗</span></button>
             <button class="vision-tab" id="vision-tab-sim" role="tab" aria-controls="vision-sim" aria-selected="false" data-vision="sim" tabindex="-1"><span class="vision-tab-no">02</span><span><b>多方案情景推演</b><small>看清每次调整的代价</small></span><span class="vision-tab-arrow" aria-hidden="true">↗</span></button>
             <button class="vision-tab" id="vision-tab-consensus" role="tab" aria-controls="vision-consensus" aria-selected="false" data-vision="consensus" tabindex="-1"><span class="vision-tab-no">03</span><span><b>版本化共识</b><small>明确谁同意了哪一版</small></span><span class="vision-tab-arrow" aria-hidden="true">↗</span></button>
             <button class="vision-tab" id="vision-tab-privacy" role="tab" aria-controls="vision-privacy" aria-selected="false" data-vision="privacy" tabindex="-1"><span class="vision-tab-no">04</span><span><b>最小披露协商</b><small>让隐私与透明同时成立</small></span><span class="vision-tab-arrow" aria-hidden="true">↗</span></button>
-            <p class="vision-menu-note">这里展示产品设想。真正上线需要后端、权限控制、AI 服务与真实用户测试。</p>
+            <p class="vision-menu-note">选择模块，查看小组决策的完整流程。</p>
           </div>
           <div class="vision-screen">
-            <div class="vision-screen-top"><span><i aria-hidden="true"></i> TABLEPEACE LAB / 虚构样例</span><span>概念预览</span></div>
+            <div class="vision-screen-top"><span><i aria-hidden="true"></i> TABLEPEACE STUDIO / 演示数据</span><span>交互预览</span></div>
             <div class="vision-panel" id="vision-ai" role="tabpanel" aria-labelledby="vision-tab-ai">
               <div class="vision-panel-kicker">AI ASSISTED INTAKE</div><h3>一句话，整理成待核对的条件。</h3><p>AI 只生成草稿；提交前由成员逐项确认。规则计算只读取确认后的字段。</p>
               <div class="vision-ai-layout"><div class="vision-note-card"><span class="vision-mini-label">成员原话 · 虚构样例</span><blockquote id="vision-note">“周五六点以后有空，预算最好别超过 20 元，想找个安静点的地方。”</blockquote><button class="vision-text-button" id="vision-next-note" type="button">切换虚构样例 <span aria-hidden="true">↻</span></button></div><div class="vision-extract-card"><span class="vision-mini-label">待本人确认的结构化草稿</span><div id="vision-tags" class="vision-tags" aria-live="polite"><span>可参加时间 <b>18:00 后</b></span><span>预算上限 <b>¥20</b></span><span>环境要求 <b>安静</b></span></div><div class="vision-human"><span>✓</span> 仅在本人确认后，才进入兼容性计算</div></div></div>
@@ -47,27 +48,42 @@
               <p class="vision-insight" id="vision-scenario-insight">3 人存在至少一项冲突。先看清原因，再调整方案。</p>
             </div>
             <div class="vision-panel" id="vision-consensus" role="tabpanel" aria-labelledby="vision-tab-consensus" hidden>
-              <div class="vision-panel-kicker">CONSENSUS PROTOCOL</div><h3>共识不是一个“同意”按钮。</h3><p>未来可对方案做版本锁定、变更对比和逐人确认。下面的进度与姓名均为虚构界面样例。</p>
+              <div class="vision-panel-kicker">CONSENSUS PROTOCOL</div><h3>共识不是一个“同意”按钮。</h3><p>对方案做版本锁定、变更对比和逐人确认。下方展示虚构成员的示例进度。</p>
               <div class="vision-version"><div><span class="vision-mini-label">待确认提案 / VERSION 02</span><h4>学校图书馆 · 18:00</h4><p>由 16:00 调整为 18:00；场地状态仍待核实</p></div><span class="vision-version-badge">3 / 4 已确认</span></div>
               <div class="vision-people"><div><span class="vision-avatar">林</span><b>林同学</b><span class="vision-yes">已确认 v2</span></div><div><span class="vision-avatar">陈</span><b>陈同学</b><span class="vision-yes">已确认 v2</span></div><div><span class="vision-avatar">周</span><b>周同学</b><span class="vision-yes">已确认 v2</span></div><div><span class="vision-avatar">许</span><b>许同学</b><span class="vision-wait">等待回应</span></div></div>
               <div class="vision-human"><span>↺</span> 方案修改后，旧版本确认应失效；未回应始终算等待。</div>
             </div>
             <div class="vision-panel" id="vision-privacy" role="tabpanel" aria-labelledby="vision-tab-privacy" hidden>
-              <div class="vision-panel-kicker">PRIVACY BY DESIGN</div><h3>让系统知道冲突，不让旁人看到隐私。</h3><p>未来的权限模型可把个人原始条件、匿名汇总和公开结论分开管理，按角色展示最少的信息。</p>
+              <div class="vision-panel-kicker">PRIVACY BY DESIGN</div><h3>让系统知道冲突，不让旁人看到隐私。</h3><p>把个人原始条件、匿名汇总和公开结论分开管理，按角色展示最少的信息。</p>
               <div class="vision-privacy-flow"><div><span class="vision-privacy-icon">◇</span><span class="vision-mini-label">仅成员本人</span><b>原始需求</b><small>时间、预算、备注</small></div><span class="vision-flow-arrow" aria-hidden="true">→</span><div><span class="vision-privacy-icon">▦</span><span class="vision-mini-label">服务端规则计算</span><b>最小化聚合</b><small>逐人检查硬条件</small></div><span class="vision-flow-arrow" aria-hidden="true">→</span><div><span class="vision-privacy-icon">○</span><span class="vision-mini-label">小组可见</span><b>匿名冲突数</b><small>不展示个人预算</small></div></div>
               <div class="vision-privacy-guard"><b>设计边界</b><span>AI 不替人同意 · 组织者不读成员原话 · 公开链接不显示聚合详情</span></div>
             </div>
           </div>
         </div>
-        <div class="vision-future-head"><div><div class="eyebrow">EXPANSION MAP</div><h3>面向长期协作的能力地图</h3></div><span>以下均为规划方向，并非当前可用功能</span></div>
-        <div class="vision-future-grid"><article><span>01 / CONNECT</span><h4>日历与群聊连接</h4><p>在获得授权后读取空闲时段，并将最终结果带回原来的群聊。</p></article><article><span>02 / VERIFY</span><h4>场地事实核验</h4><p>接入营业时间与预约状态，同时保留来源和人工复核记录。</p></article><article><span>03 / OPERATE</span><h4>自动提醒与截止时间</h4><p>只提醒未回应的人；到期后明确展示仍未知的条件。</p></article><article><span>04 / REUSE</span><h4>可复用团队模板</h4><p>复用会议、活动和出行的决策结构，不复用未经许可的私人条件。</p></article><article><span>05 / REVIEW</span><h4>决策轨迹与复盘</h4><p>记录方案变化、人工核验和确认版本，生成可分享的过程摘要。</p></article><article><span>06 / PLATFORM</span><h4>组织级权限与 API</h4><p>让社团或团队接入既有工具，并配置数据保留与访问范围。</p></article></div>
+        <div class="vision-future-head"><div><div class="eyebrow">MORE TO EXPLORE</div><h3>一站式决策工具箱</h3></div><span>点击卡片，体验更多交互样例</span></div>
+        <div class="vision-future-grid" role="group" aria-label="更多功能演示">
+          <button type="button" class="cap-card" data-cap="calendar" aria-controls="cap-preview"><span>01 / SYNC</span><strong>日历空闲交集</strong><small>把成员可用时间叠在同一条时间线上，快速定位共同窗口。</small><em aria-hidden="true">↗</em></button>
+          <button type="button" class="cap-card" data-cap="venue" aria-controls="cap-preview"><span>02 / VERIFY</span><strong>场地核验台</strong><small>同时查看营业时间、容量、预约和人工复核记录。</small><em aria-hidden="true">↗</em></button>
+          <button type="button" class="cap-card" data-cap="remind" aria-controls="cap-preview"><span>03 / FOLLOW UP</span><strong>智能提醒</strong><small>按截止时间提醒待回应成员，区分已读、待回应与已确认。</small><em aria-hidden="true">↗</em></button>
+          <button type="button" class="cap-card" data-cap="template" aria-controls="cap-preview"><span>04 / REUSE</span><strong>团队模板</strong><small>把会议、社团活动与出行流程变成可复用模板。</small><em aria-hidden="true">↗</em></button>
+          <button type="button" class="cap-card" data-cap="history" aria-controls="cap-preview"><span>05 / TRACE</span><strong>决策时间线</strong><small>追踪方案变化、冲突消除和每一轮确认。</small><em aria-hidden="true">↗</em></button>
+          <button type="button" class="cap-card" data-cap="api" aria-controls="cap-preview"><span>06 / CONNECT</span><strong>工作流 API</strong><small>将决策状态同步到团队工具和自动化流程。</small><em aria-hidden="true">↗</em></button>
+          <button type="button" class="cap-card" data-cap="rank" aria-controls="cap-preview"><span>07 / PREFERENCE</span><strong>偏好排序</strong><small>先守住硬条件，再比较大家的软偏好。</small><em aria-hidden="true">↗</em></button>
+          <button type="button" class="cap-card" data-cap="explain" aria-controls="cap-preview"><span>08 / EXPLAIN</span><strong>冲突解释</strong><small>把复杂计算转成一眼能读懂的原因与调整建议。</small><em aria-hidden="true">↗</em></button>
+          <button type="button" class="cap-card" data-cap="access" aria-controls="cap-preview"><span>09 / INCLUSION</span><strong>无障碍条件</strong><small>把轮椅通行、字幕和环境要求纳入方案检查。</small><em aria-hidden="true">↗</em></button>
+          <button type="button" class="cap-card" data-cap="export" aria-controls="cap-preview"><span>10 / SHARE</span><strong>结果导出</strong><small>一键生成群聊摘要、日历事件和复盘报告。</small><em aria-hidden="true">↗</em></button>
+          <button type="button" class="cap-card" data-cap="automation" aria-controls="cap-preview"><span>11 / AGENT</span><strong>流程助手</strong><small>让任务按收集、比较、核验、确认的节奏自动推进。</small><em aria-hidden="true">↗</em></button>
+          <button type="button" class="cap-card" data-cap="budget" aria-controls="cap-preview"><span>12 / COST</span><strong>费用协同</strong><small>模拟人均预算、补贴与费用分摊的不同方案。</small><em aria-hidden="true">↗</em></button>
+        </div>
+        <div class="cap-preview" id="cap-preview" aria-live="polite"><div class="cap-preview-label">功能演示 / 选择上方卡片</div><h4>让每一步，都看得见。</h4><p>点击任意功能卡片，查看它在 TablePeace 中如何工作。</p></div>
       </div>
     </section>
     <section class="boundary-section" id="boundaries"><div class="boundary-wrap"><div><div class="eyebrow">三道清晰边界</div><h2>能一起去，和已经决定，是两回事。</h2><p class="muted">系统只依据成员明确提交的硬性条件计算兼容性。地点是否可用需要人核实；最终承诺需要每个人明确确认。</p></div><div class="boundary-list"><div><b>01 · 兼容</b><span>已记录条件中没有冲突。未知条件仍显示未知。</span></div><div><b>02 · 核实</b><span>有人实际检查场地、营业时间或预订状态。</span></div><div><b>03 · 确认</b><span>全部成员接受同一版本的具体方案。</span></div></div></div></section>
   </main>
-  <footer class="footer">TablePeace · 静态交互演示。多人实时协作需部署后端与数据库。</footer>
+  <footer class="footer">TablePeace · 中文交互 Demo · 页面使用虚构样例数据。</footer>
   <div id="toast" role="status" aria-live="polite"></div>
   <script src="./app.js?v=2" defer></script>
-  <script src="./vision.js" defer></script>
+  <script src="./vision.js?v=3" defer></script>
+  <script src="./capabilities.js" defer></script>
 </body>
 </html>
