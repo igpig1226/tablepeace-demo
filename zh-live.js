@@ -248,8 +248,30 @@ for (const [english,chinese] of Object.entries({
   'Only the organizer can do that.':'只有组织者可以执行此操作。',
   'Join this decision first.':'请先加入这个决策。'
 })) phrases.set(english,chinese);
+for (const [english,chinese] of Object.entries({
+  'SET UP · 01/04':'设置 · 01/04',
+  'COLLECT NEEDS · 02/04':'收集要求 · 02/04',
+  'COMPARE · 03/04':'对比方案 · 03/04',
+  'DECIDE · 04/04':'最终决定 · 04/04',
+  'DECISION ROOM':'决策房间',
+  'CANDIDATE PLAN':'候选方案',
+  'RESCUED OPTION':'调整后的方案',
+  'GROUP COMPATIBILITY':'小组方案兼容性',
+  'COMPATIBILITY MAP':'兼容性矩阵',
+  'WHY THIS PLAN?':'这个方案为什么这样？',
+  'PLAN RESCUE':'方案重组',
+  'ORGANIZER TOOLS':'组织者工具',
+  'ORGANIZER ACTION':'组织者操作',
+  'PROPOSED PLAN':'待确认方案',
+  'submitted':'已提交',
+  'quiet':'安静',
+  'moderate':'适中',
+  'lively':'热闹',
+  'unknown':'未知'
+})) phrases.set(english,chinese);
 const patterns = [
   [/^(\d+) of (\d+) submitted$/,(_,a,b)=>`已提交 ${a}/${b} 人`],
+  [/^(\d+) of (\d+)$/,(_,a,b)=>`${a}/${b} 人`],
   [/^(\d+) conflicts?$/,(_,n)=>`${n} 个冲突`],
   [/^(\d+) blocked$/,(_,n)=>`${n} 人冲突`],
   [/^(\d+) unknown$/,(_,n)=>`${n} 项未知`],
@@ -290,4 +312,9 @@ if (translatedApp) {
       else for (const node of change.addedNodes) translateTree(node);
     }
   }).observe(translatedApp,{subtree:true,childList:true,characterData:true});
+}
+const toastElement=document.getElementById('toast');
+if(toastElement){
+  translateTree(toastElement);
+  new MutationObserver(()=>translateTree(toastElement)).observe(toastElement,{subtree:true,childList:true,characterData:true});
 }
