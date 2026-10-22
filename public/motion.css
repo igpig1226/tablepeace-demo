@@ -1,0 +1,45 @@
+/* Shared motion layer for the public showcase and the live workspace. */
+:root{--ease-out:cubic-bezier(.22,1,.36,1)}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.topbar{position:sticky;top:0;z-index:30;backdrop-filter:blur(22px) saturate(145%);-webkit-backdrop-filter:blur(22px) saturate(145%)}
+.topnav .button{color:#fff!important}
+.button,.button-outline,.button-quiet,.button-danger,.cap-primary,.cap-secondary{position:relative;overflow:hidden;transition:transform .28s var(--ease-out),box-shadow .28s var(--ease-out),background .2s ease,border-color .2s ease}
+.button:hover,.cap-primary:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(5,105,148,.23)}
+.button-outline:hover,.button-quiet:hover,.cap-secondary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(10,83,120,.10)}
+.button:active,.button-outline:active,.button-quiet:active,.cap-primary:active,.cap-secondary:active{transform:translateY(0) scale(.98)}
+.button:after,.cap-primary:after{content:"";position:absolute;inset:0 auto 0 -150%;width:70%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-22deg);transition:left .7s var(--ease-out);pointer-events:none}
+.button:hover:after,.cap-primary:hover:after{left:150%}
+.hero{isolation:isolate}
+.hero:after{content:"";position:absolute;z-index:-1;right:2%;top:8%;width:min(48vw,600px);aspect-ratio:1;border:1px solid rgba(48,151,192,.18);border-radius:50%;box-shadow:0 0 0 76px rgba(49,156,198,.035),0 0 0 154px rgba(49,156,198,.025);pointer-events:none;animation:orbit-breathe 8s ease-in-out infinite alternate}
+.hero h1{letter-spacing:-.065em}
+.hero .eyebrow:before{content:"";display:inline-block;width:7px;height:7px;margin:0 9px 1px 0;border-radius:50%;background:#20a7cc;box-shadow:0 0 0 5px rgba(32,167,204,.12);animation:beacon 2.7s ease-in-out infinite}
+.hero-preview{transition:transform .45s var(--ease-out),box-shadow .45s var(--ease-out);transform:perspective(1200px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) rotate(-1deg);will-change:transform}
+.hero-preview:hover{box-shadow:0 42px 84px rgba(11,88,130,.19),0 5px 18px rgba(11,88,130,.06)}
+.hero-preview:after{content:"";position:absolute;inset:1px;border-radius:inherit;background:radial-gradient(350px circle at var(--spot-x,50%) var(--spot-y,50%),rgba(255,255,255,.44),transparent 65%);pointer-events:none;mix-blend-mode:soft-light}
+.preview-cell.good,.preview-cell.bad,.preview-cell.warn{transition:transform .28s var(--ease-out),filter .28s ease}
+.preview-cell.good:hover,.preview-cell.bad:hover,.preview-cell.warn:hover{transform:translateY(-3px);filter:saturate(1.18)}
+.feature,.card,.ws-card,.cap-card,.vision-console,.option-edit{transition:transform .35s var(--ease-out),box-shadow .35s var(--ease-out),border-color .35s ease,background .35s ease}
+.feature,.cap-card{position:relative;overflow:hidden}
+.feature:before,.cap-card:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,#087fa4,#62cce2);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease-out)}
+.feature:hover:before,.cap-card:hover:before,.cap-card.active:before{transform:scaleX(1)}
+.feature:hover,.card:not(.empty):hover,.ws-card:hover,.cap-card:hover,.option-edit:hover{transform:translateY(-4px);box-shadow:0 22px 44px rgba(8,88,128,.10);border-color:#a8d6e9}
+.status:before{box-shadow:0 0 0 0 currentColor;animation:status-pulse 2.9s ease-in-out infinite}
+.status.blocked:before,.status.pending:before,.status.needs_info:before{animation:none}
+.progress-fill,.vision-bar i{transition:width .65s var(--ease-out);background-image:linear-gradient(90deg,#087fa4,#40b8d5,#087fa4);background-size:200% 100%;animation:current-flow 5s linear infinite}
+.sidelink,.workspace-link,.vision-tab,.plan-tab,.ws-plan-tabs button,.select-card{transition:transform .25s var(--ease-out),background .25s ease,border-color .25s ease,box-shadow .25s ease}
+.sidelink:hover,.workspace-link:hover,.vision-tab:hover{transform:translateX(3px)}
+.plan-tab:hover,.ws-plan-tabs button:hover,.select-card:hover{transform:translateY(-2px)}
+.sidelink.active,.workspace-link.active,.vision-tab.active{box-shadow:inset 3px 0 0 #0b8cb3,0 8px 20px rgba(8,127,164,.06)}
+.motion-intro .shell-content,.motion-intro .page,.motion-intro .landing{animation:page-enter .55s var(--ease-out) both}
+.motion-ready [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out);transition-delay:var(--reveal-delay,0ms)}
+.motion-ready [data-reveal].is-visible{opacity:1;transform:translateY(0)}
+.motion-ready .hero-preview[data-reveal].is-visible{transform:perspective(1200px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) rotate(-1deg)}
+.motion-ready .feature[data-reveal].is-visible:hover,.motion-ready .card[data-reveal].is-visible:not(.empty):hover,.motion-ready .ws-card[data-reveal].is-visible:hover,.motion-ready .cap-card[data-reveal].is-visible:hover,.motion-ready .option-edit[data-reveal].is-visible:hover{transform:translateY(-4px)}
+@keyframes page-enter{from{opacity:.4;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@keyframes orbit-breathe{from{transform:translateY(-8px) scale(.97);opacity:.7}to{transform:translateY(12px) scale(1.04);opacity:1}}
+@keyframes beacon{50%{box-shadow:0 0 0 9px rgba(32,167,204,0)}}
+@keyframes status-pulse{50%{box-shadow:0 0 0 5px rgba(8,127,164,0)}}
+@keyframes current-flow{to{background-position:200% 0}}
+@media(max-width:760px){.hero:after{right:-28%;top:5%;width:72vw;box-shadow:0 0 0 45px rgba(49,156,198,.035),0 0 0 90px rgba(49,156,198,.025)}.hero-preview{transform:none!important}.feature:hover,.card:not(.empty):hover,.ws-card:hover,.cap-card:hover,.option-edit:hover,.motion-ready .feature[data-reveal].is-visible:hover,.motion-ready .card[data-reveal].is-visible:not(.empty):hover,.motion-ready .ws-card[data-reveal].is-visible:hover,.motion-ready .cap-card[data-reveal].is-visible:hover,.motion-ready .option-edit[data-reveal].is-visible:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.hero:after,.hero .eyebrow:before,.status:before,.progress-fill,.vision-bar i{animation:none!important}.motion-intro .shell-content,.motion-intro .page,.motion-intro .landing{animation:none!important}.motion-ready [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}.hero-preview,.button,.button-outline,.button-quiet,.button-danger,.cap-primary,.cap-secondary,.feature,.card,.ws-card,.cap-card,.option-edit,.sidelink,.workspace-link,.vision-tab,.plan-tab,.ws-plan-tabs button,.select-card{transition:none!important;transform:none!important}.button:after,.cap-primary:after{display:none}}
+@media print{.motion-ready [data-reveal]{opacity:1!important;transform:none!important}}

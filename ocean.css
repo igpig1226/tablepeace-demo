@@ -16,3 +16,50 @@ body{background:linear-gradient(160deg,#f0f8fe 0,#fff 34%,#f5faff 100%);color:va
 .notice.blue,.card.blue,.preview-foot{background:#e9f6fc;color:#176887;border-color:#d2eaf5}
 .eyebrow,.step-no,.matrix .matrix-value.good{color:#087fa4}
 input:focus,select:focus,textarea:focus{border-color:#5aafce;box-shadow:0 0 0 3px rgba(8,127,164,.11);outline:none}
+
+/* The live workspace uses the same ocean material system as the showcase. */
+.topbar{height:72px;border-bottom:1px solid rgba(177,215,231,.58);box-shadow:0 10px 30px rgba(16,95,133,.035)}
+.topbar-inner{max-width:1280px}
+.logo{font-weight:780;letter-spacing:-.045em}
+.logo-mark{border-radius:11px}
+.button,.button-outline,.button-quiet,.button-danger{border-radius:12px}
+.button{background:linear-gradient(135deg,#076b91,#1599ba);border-color:rgba(0,98,136,.15)}
+.button:hover{background:linear-gradient(135deg,#065f83,#118cac)}
+.button-outline{border-color:#bed7e3;background:rgba(255,255,255,.86)}
+.landing .hero{max-width:1280px;min-height:650px;gap:clamp(34px,5vw,76px);padding-block:95px 105px}
+.landing .hero h1{font-size:clamp(46px,4.5vw,68px);line-height:1.08;letter-spacing:-.065em}
+.landing .hero p{line-height:1.75}
+.landing .feature-band{padding-block:74px 85px}
+.landing .feature-grid{max-width:1200px}
+.feature{position:relative;border-radius:21px;padding:30px;background:linear-gradient(145deg,#fff,#f8fcff)}
+.feature h3{font-size:19px}
+.feature-icon{width:46px;height:46px;border-radius:14px}
+.shell{grid-template-columns:244px minmax(0,1fr);background:linear-gradient(155deg,#f2f9fd,#fff 45%,#f5faff)}
+.sidebar{position:sticky;top:0;align-self:start;height:100vh;padding:30px 16px;background:linear-gradient(180deg,#fbfeff,#f0f8fc);border-right-color:#d8e9f2}
+.side-label{color:#6c91a5}
+.sidelink{min-height:45px;border-radius:12px}
+.sidelink.active{background:#e1f3fb;color:#076b8e;font-weight:750}
+.shell-top{position:sticky;top:0;z-index:20;height:70px;border-bottom-color:#dcebf3;box-shadow:0 7px 23px rgba(8,73,111,.035)}
+.shell-content{max-width:1220px;padding-top:32px}
+.shell-content>.heading-row,.page>.heading-row{position:relative;isolation:isolate;overflow:hidden;padding:30px 32px;border:1px solid #d4e8f2;border-radius:23px;background:radial-gradient(circle at 90% 0%,rgba(195,237,249,.7),transparent 31%),linear-gradient(120deg,#fff,#f5fbff);box-shadow:0 17px 42px rgba(8,85,125,.07)}
+.shell-content>.heading-row:after,.page>.heading-row:after{content:"";position:absolute;z-index:-1;right:-45px;top:-90px;width:270px;height:270px;border:1px solid rgba(24,146,188,.15);border-radius:50%;box-shadow:0 0 0 47px rgba(24,146,188,.04),0 0 0 94px rgba(24,146,188,.025);pointer-events:none}
+.shell-content>.heading-row h1,.page>.heading-row h1{font-size:clamp(28px,2.8vw,37px);letter-spacing:-.05em}
+.shell-content>.heading-row p,.page>.heading-row p{max-width:600px}
+.card{border-radius:20px;padding:26px;background:linear-gradient(150deg,#fff,#fbfdff);box-shadow:0 12px 34px rgba(8,73,111,.045)}
+.card.soft{background:#f8fcff}
+.option-edit{border-radius:18px;background:linear-gradient(150deg,#fff,#f7fbfe);padding:22px}
+input,select,textarea{border-radius:12px;border-color:#c9dde8;background:#fcfeff;transition:border-color .2s ease,box-shadow .2s ease,background .2s ease}
+input:hover,select:hover,textarea:hover{border-color:#8dbed2}
+.option-detail div{background:#f0f8fc;border:1px solid #e3f0f7;border-radius:11px}
+.notice{border-radius:13px}
+.status{padding:6px 11px}
+.progress{height:10px;background:#e4eff5}
+.counter b{color:#086d93;font-size:36px}
+.plan-tab,.select-card,.radio-row{border-radius:13px}
+.matrix{border-radius:14px}
+.matrix .matrix-head{background:#eaf5fa}
+.matrix>div{padding-block:17px}
+.empty-icon{background:#e8f5fb;border-radius:16px}
+#toast{border:1px solid rgba(255,255,255,.18);background:#103b54;border-radius:14px;box-shadow:0 18px 38px rgba(9,55,83,.2)}
+@media(max-width:1023px){.sidebar{display:none}.shell{display:block}.shell-content{padding-top:24px}}
+@media(max-width:760px){.landing .hero{min-height:auto;padding:67px 16px 62px}.landing .hero h1{font-size:clamp(40px,10vw,52px)}.shell-content>.heading-row,.page>.heading-row{padding:23px 20px;border-radius:19px}.shell-content>.heading-row h1,.page>.heading-row h1{font-size:28px}.card{padding:19px}.option-edit{padding:18px}.topbar{height:64px}.shell-top{height:64px}}
