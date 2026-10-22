@@ -382,6 +382,12 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(raw)
 
+    def redirect(self, location):
+        self.send_response(302)
+        self.send_header("Location", location)
+        self.send_header("Content-Length", "0")
+        self.end_headers()
+
     def session(self, conn, create=False):
         jar = http.cookies.SimpleCookie()
         try:
@@ -425,14 +431,28 @@ class Handler(BaseHTTPRequestHandler):
         if not path.startswith("/api/"):
             if method != "GET":
                 fail("NOT_FOUND", "Not found.", 404)
+            if path == "/":
+                return self.redirect("/zh/")
+            if path in ("/zh", "/zh/"):
+                return self.send_file(ROOT / "docs" / "index.html", "text/html; charset=utf-8")
+            chinese_assets = {"/zh/styles.css": ("styles.css", "text/css; charset=utf-8"),
+                              "/zh/site.css": ("site.css", "text/css; charset=utf-8"),
+                              "/zh/app.js": ("app.js", "text/javascript; charset=utf-8"),
+                              "/zh/favicon.svg": ("favicon.svg", "image/svg+xml")}
+            if path in chinese_assets:
+                name, mime = chinese_assets[path]
+                return self.send_file(ROOT / "docs" / name, mime)
             static = {"/styles.css": ("styles.css", "text/css; charset=utf-8"),
-                      "/app.js": ("app.js", "text/javascript; charset=utf-8")}
+                      "/app.js": ("app.js", "text/javascript; charset=utf-8"),
+                      "/zh-live.js": ("zh-live.js", "text/javascript; charset=utf-8")}
             if path in static:
                 name, mime = static[path]
                 return self.send_file(ROOT / name, mime)
             if path == "/favicon.svg":
                 return self.send_file(ROOT / "favicon.svg", "image/svg+xml")
-            return self.send_file(ROOT / "index.html", "text/html; charset=utf-8")
+            if path in ("/app", "/new", "/demo") or (path.startswith("/r/") and len(path.split("/")) >= 3):
+                return self.send_file(ROOT / "index.html", "text/html; charset=utf-8")
+            fail("NOT_FOUND", "Not found.", 404)
         parts = path.strip("/").split("/")
         if method in ("POST", "PUT", "DELETE"):
             data = self.input_json()

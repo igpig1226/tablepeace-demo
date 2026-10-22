@@ -12,6 +12,10 @@ const people = [
 ];
 const state = {view:'compare',options:initialOptions.map(x=>({...x})),selected:0,base:1,simulation:null,proposal:null,accepted:0};
 const root = document.getElementById('workspace-content');
+if (location.hostname.endsWith('.onrender.com') || location.hostname === '127.0.0.1') {
+  document.getElementById('live-start').hidden = false;
+  document.getElementById('live-note').hidden = false;
+}
 const esc = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const min = time => Number(time.slice(0,2))*60+Number(time.slice(3));
 function inspect(option,person){

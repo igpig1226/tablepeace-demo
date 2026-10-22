@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: tablepeace-demo
+    runtime: python
+    plan: free
+    buildCommand: python -m py_compile server.py
+    startCommand: python server.py --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: TABLEPEACE_DB
+        value: /tmp/tablepeace.sqlite3
