@@ -1,0 +1,17 @@
+{
+  "name": "tablepeace-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "node worker/sync-assets.mjs",
+    "dev": "wrangler dev --local --port 8787",
+    "db:local": "wrangler d1 execute tablepeace-live --local --file worker/schema.sql",
+    "db:remote": "wrangler d1 execute tablepeace-live --remote --file worker/schema.sql",
+    "test:worker": "node worker/test.mjs",
+    "predeploy": "node worker/sync-assets.mjs",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.151.3"
+  }
+}
