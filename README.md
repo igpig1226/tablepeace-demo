@@ -22,7 +22,7 @@ python3 server.py
 
 ## Render 部署
 
-在 Render 导入此公开仓库并创建免费 Web Service。构建、启动和健康检查配置见 `render.yaml`。服务地址的 `/` 会跳转到中文首页 `/zh/`，`/new` 可建立多人房间。
+在 Render 导入此公开仓库并创建免费 Web Service。Blueprint 配置见 `render.yaml`；手工创建时可选 Docker，仓库根目录的 `Dockerfile` 已包含启动命令。服务地址的 `/` 会跳转到中文首页 `/zh/`，`/new` 可建立多人房间。
 
 免费服务将 SQLite 数据放在 `/tmp/tablepeace.sqlite3`。Render 重启或重新部署后，房间及私人输入可能丢失；只适合演示，不适合长期保存真实数据。未设置 AI 环境变量时，AI 笔记提取不可用。
 
