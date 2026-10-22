@@ -1,5 +1,17 @@
 /* Translate the live prototype's fixed UI copy. User-entered room data stays as entered. */
 const phrases = new Map(Object.entries({
+  'Different needs.':'不同需求。',
+  'One workable plan.':'一个可行方案。',
+  'EXAMPLE':'示例',
+  'Coffee':'咖啡',
+  'Hub':'馆',
+  'School':'学校',
+  'Library':'图书馆',
+  'Makerspace':'创客空间',
+  'Clear':'无冲突',
+  '◇ Change the plan: School Library at 18:00 → 0 recorded conflicts':'◇ 调整方案：学校图书馆 + 18:00 → 0 个已记录冲突',
+  'TablePeace · No account needed to participate. Private needs stay private.':'TablePeace · 无需注册 · 私人要求只对本人可见',
+  'Illustrative compatibility example':'方案兼容性示意',
   'Friday Project Meetup':'周五项目聚会',
   'A place and time to meet':'确定聚会地点和时间',
   'School Library':'学校图书馆',

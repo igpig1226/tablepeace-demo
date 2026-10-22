@@ -5,7 +5,7 @@
 ## 两个入口
 
 - `docs/`：GitHub Pages 的中文产品演示。使用明确标注的虚构样例，不保存多人数据。
-- 根目录真实应用：Cloudflare Worker 托管页面与 API，D1 保存房间和成员输入。`/new` 建房，邀请链接 `/r/:id` 跨设备加入。
+- [线上多人应用](https://tablepeace-live.igpig1226.workers.dev/)：Cloudflare Worker 托管页面与 API，D1 保存房间和成员输入。`/new` 建房，邀请链接 `/r/:id` 跨设备加入。
 
 AI 解析暂不在真实应用中开放。成员自行填写条件；兼容性使用确定性规则计算。
 
@@ -23,11 +23,7 @@ npm run dev
 
 ## Cloudflare 部署
 
-1. 在 Cloudflare 登录后执行 `npx wrangler login`。
-2. 执行 `npx wrangler d1 create tablepeace-live`，将返回的 `database_id` 写入 `wrangler.jsonc`。
-3. 执行 `npm run db:remote` 创建表。
-4. 执行 `npm run deploy`。部署返回的 `workers.dev` 地址就是多人应用入口。
-5. 用不同设备或浏览器会话分别加入同一邀请链接，验证真实流程。
+当前账号的 D1 数据库已创建，`wrangler.jsonc` 已绑定其 ID，线上表结构已初始化。更新网站时执行 `npm run deploy`。在另一 Cloudflare 账号部署时，先执行 `npx wrangler login`、`npx wrangler d1 create tablepeace-live`，把新 `database_id` 写入 `wrangler.jsonc`，再执行 `npm run db:remote` 和 `npm run deploy`。
 
 不要在仓库保存 API Key。D1 记录房间、方案、匿名会话标识和私人条件。浏览器只保存随机会话 Cookie；数据库只保存其 SHA-256 摘要。成员只能读取自己的完整条件；组织者和成员可以读取汇总；访客不能读取汇总。丢失浏览器会话后，昵称无法恢复权限。
 

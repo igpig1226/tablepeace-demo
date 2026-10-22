@@ -6,13 +6,14 @@
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
-    "not_found_handling": "single-page-application"
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
   },
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "tablepeace-live",
-      "database_id": "00000000-0000-0000-0000-000000000000"
+      "database_id": "8636fb21-65fc-4e6b-ad5a-78a0def8f1fc"
     }
   ]
 }
